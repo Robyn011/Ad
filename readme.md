@@ -6,11 +6,15 @@ const PORT = 3000;
 let items = [];
 
 // Load data from JSON file at the start
-fs.readFile('items.json', (err, data) => {
+fs.readFile('./items.json', (err, data) => {
     if (!err) {
         items = JSON.parse(data);
     }
 });
+
+
+
+
 
 const server = http.createServer((req, res) => {
     const url = parse(req.url, true);
